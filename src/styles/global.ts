@@ -9,17 +9,17 @@ export const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: 0;
-    box-shadow: 0 0 0 2px #C47F17;
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.yellow[900]};
   }
 
   body {
-    background-color: #fafafa;
-    color: #574f4d;
+    background-color: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.base.text};
   }
 
   body, input, textarea, button {
-    font-family: 'Robot', sans-serif;
+    font-family: ${props => props.theme.fontFamily.roboto.join(',')};
     font-weight: 400;
-    font-size: 1rem;
+    font-size: ${props => props.theme.fontSize.base};
   }
 `
