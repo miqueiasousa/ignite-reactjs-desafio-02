@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 
+import { Banner } from './components/Banner/Banner'
 import { Header } from './components/Header/Header'
 import { defaultTheme } from './styles/themes/default'
 
@@ -11,6 +12,9 @@ function App() {
     <ThemeProvider theme={defaultTheme}>
       <Container>
         <Header />
+        <main>
+          <Banner />
+        </main>
       </Container>
       <GlobalStyle />
     </ThemeProvider>
