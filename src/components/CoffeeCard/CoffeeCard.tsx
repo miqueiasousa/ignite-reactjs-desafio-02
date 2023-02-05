@@ -19,7 +19,7 @@ import {
   TagsContainer
 } from './CoffeeCard.styles'
 
-export function CoffeCard() {
+export function CoffeeCard() {
   return (
     <CardContainer>
       <CardImage src={cafeGelado} />
