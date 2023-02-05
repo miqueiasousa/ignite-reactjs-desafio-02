@@ -1,7 +1,5 @@
 import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
 
-import cafeGelado from '../../assets/cafe-gelado.png'
-
 import {
   ActionsContainer,
   BuyButton,
@@ -19,21 +17,39 @@ import {
   TagsContainer
 } from './CoffeeCard.styles'
 
-export function CoffeeCard() {
+interface Tag {
+  id: number
+  description: string
+}
+
+interface CoffeeCardProps {
+  name: string
+  description: string
+  imageUrl: string
+  tags: Tag[]
+  price: string
+}
+
+export function CoffeeCard({
+  name,
+  description,
+  imageUrl,
+  tags,
+  price
+}: CoffeeCardProps) {
   return (
     <CardContainer>
-      <CardImage src={cafeGelado} />
+      <CardImage src={imageUrl} />
       <TagsContainer>
-        <Tag>Tradicional</Tag>
-        <Tag>Gelado</Tag>
+        {tags.map(tag => (
+          <Tag key={tag.id}>{tag.description}</Tag>
+        ))}
       </TagsContainer>
-      <CardTitle>Expresso Gelado</CardTitle>
-      <CardDescription>
-        Bebida preparada com café expresso e cubos de gelo
-      </CardDescription>
+      <CardTitle>{name}</CardTitle>
+      <CardDescription>{description}</CardDescription>
       <CardFooter>
         <Price>
-          R$ <span>9,90</span>
+          R$ <span>{price}</span>
         </Price>
         <ActionsContainer>
           <Counter className="quantity">
