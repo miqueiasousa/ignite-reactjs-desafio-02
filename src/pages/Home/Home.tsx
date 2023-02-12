@@ -1,6 +1,6 @@
-import { Banner } from '../../components/Banner/Banner'
 import { CoffeeCard } from '../../components/CoffeeCard/CoffeeCard'
 import { Header } from '../../components/Header/Header'
+import { Banner } from './components/Banner/Banner'
 
 import { Container, Feed, FeedContainer, Title } from './Home.styles'
 

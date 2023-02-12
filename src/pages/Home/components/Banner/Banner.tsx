@@ -1,6 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
-import bannerImage from '../../assets/banner.png'
+import bannerImage from '../../../../assets/banner.png'
 
 import {
   BannerContainer,
