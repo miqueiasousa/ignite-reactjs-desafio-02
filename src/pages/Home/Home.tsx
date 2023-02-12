@@ -1,8 +1,7 @@
 import { CoffeeCard } from '../../components/CoffeeCard/CoffeeCard'
-import { Header } from '../../components/Header/Header'
 import { Banner } from './components/Banner/Banner'
 
-import { Container, Feed, FeedContainer, Title } from './Home.styles'
+import { Feed, FeedContainer, Title } from './Home.styles'
 
 const coffeeList = [
   {
@@ -155,26 +154,23 @@ const coffeeList = [
 
 export function Home() {
   return (
-    <Container>
-      <Header />
-      <main>
-        <Banner />
-        <FeedContainer>
-          <Title>Nossos cafés</Title>
-          <Feed>
-            {coffeeList.map(coffe => (
-              <CoffeeCard
-                key={coffe.id}
-                name={coffe.name}
-                description={coffe.description}
-                imageUrl={coffe.imageUrl}
-                tags={coffe.tags}
-                price={coffe.price}
-              />
-            ))}
-          </Feed>
-        </FeedContainer>
-      </main>
-    </Container>
+    <main>
+      <Banner />
+      <FeedContainer>
+        <Title>Nossos cafés</Title>
+        <Feed>
+          {coffeeList.map(coffe => (
+            <CoffeeCard
+              key={coffe.id}
+              name={coffe.name}
+              description={coffe.description}
+              imageUrl={coffe.imageUrl}
+              tags={coffe.tags}
+              price={coffe.price}
+            />
+          ))}
+        </Feed>
+      </FeedContainer>
+    </main>
   )
 }
