@@ -157,7 +157,7 @@ const coffeeList = [
   }
 ]
 
-function App() {
+export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container>
@@ -185,5 +185,3 @@ function App() {
     </ThemeProvider>
   )
 }
-
-export default App
