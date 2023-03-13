@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
@@ -11,7 +12,7 @@ export const HeaderContainer = styled.header`
   }
 `
 
-export const BaseButton = styled.button`
+export const LocationButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -19,15 +20,18 @@ export const BaseButton = styled.button`
   border-radius: 6px;
   border: none;
   font-size: ${props => props.theme.fontSize.sm};
-  line-height: 1.3;
-`
-
-export const LocationButton = styled(BaseButton)`
   background-color: ${props => props.theme.colors.purple[100]};
   color: ${props => props.theme.colors.purple[900]};
 `
 
-export const CartButton = styled(BaseButton)`
+export const CartButton = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  font-size: ${props => props.theme.fontSize.sm};
   background-color: ${props => props.theme.colors.yellow[100]};
   color: ${props => props.theme.colors.yellow[900]};
 `
