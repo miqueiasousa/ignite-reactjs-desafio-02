@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import {
   Bank,
   CreditCard,
   CurrencyDollar,
   MapPinLine,
-  Money
+  Minus,
+  Money,
+  Plus,
+  Trash
 } from 'phosphor-react'
 
 import {
@@ -17,10 +21,21 @@ import {
   Input,
   Select,
   Title,
-  SelectItem
+  SelectItem,
+  CheckoutDetails,
+  Counter,
+  CounterMinusButton,
+  CounterTotal,
+  CounterPlusButton,
+  Item,
+  Divider,
+  PriceInfo,
+  ConfirmButton
 } from './Checkout.styles'
 
 export function Checkout() {
+  const navigate = useNavigate()
+
   return (
     <CheckoutContainer>
       <div>
@@ -79,6 +94,77 @@ export function Checkout() {
       </div>
       <div>
         <Title>Cafés selecionados</Title>
+        <CheckoutDetails>
+          <div>
+            <Item>
+              <img src="/src/assets/expresso.png" />
+              <div className="details">
+                <div className="title">
+                  <span>Expresso Tradicional</span>
+                  <strong>R$ 9,90</strong>
+                </div>
+                <div className="actions">
+                  <Counter>
+                    <CounterMinusButton>
+                      <Minus size={14} weight="bold" />
+                    </CounterMinusButton>
+                    <CounterTotal>1</CounterTotal>
+                    <CounterPlusButton>
+                      <Plus size={14} weight="bold" />
+                    </CounterPlusButton>
+                  </Counter>
+                  <button className="remove">
+                    <Trash size={16} color="#8047F8" />
+                    <span>REMOVER</span>
+                  </button>
+                </div>
+              </div>
+            </Item>
+            <Divider />
+            <Item>
+              <img src="/src/assets/expresso.png" />
+              <div className="details">
+                <div className="title">
+                  <span>Expresso Tradicional</span>
+                  <strong>R$ 9,90</strong>
+                </div>
+                <div className="actions">
+                  <Counter>
+                    <CounterMinusButton>
+                      <Minus size={14} weight="bold" />
+                    </CounterMinusButton>
+                    <CounterTotal>1</CounterTotal>
+                    <CounterPlusButton>
+                      <Plus size={14} weight="bold" />
+                    </CounterPlusButton>
+                  </Counter>
+                  <button className="remove">
+                    <Trash size={16} color="#8047F8" />
+                    <span>REMOVER</span>
+                  </button>
+                </div>
+              </div>
+            </Item>
+            <Divider />
+          </div>
+          <PriceInfo>
+            <div className="price">
+              <span>Total de itens</span>
+              <span>R$ 29,70</span>
+            </div>
+            <div className="price">
+              <span>Entrega</span>
+              <span>R$ 3,50</span>
+            </div>
+            <div className="price">
+              <span>Total</span>
+              <span>R$ 33,20</span>
+            </div>
+          </PriceInfo>
+          <ConfirmButton onClick={() => navigate('/checkout/success')}>
+            Confirmar pedido
+          </ConfirmButton>
+        </CheckoutDetails>
       </div>
     </CheckoutContainer>
   )
