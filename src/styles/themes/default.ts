@@ -23,10 +23,6 @@ export const defaultTheme = {
       900: '#4B2995'
     }
   },
-  fontFamily: {
-    baloo: ['Baloo 2', 'cursive'],
-    roboto: ['Roboto', 'sans-serif']
-  },
   fontSize: {
     '2xs': '0.625rem',
     xs: '0.75rem',

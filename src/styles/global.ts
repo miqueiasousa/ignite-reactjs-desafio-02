@@ -18,8 +18,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button {
-    font-family: ${props => props.theme.fontFamily.roboto.join(',')};
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: ${props => props.theme.fontSize.base};
+    line-height: 1.3;
   }
 `
