@@ -4,11 +4,10 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPinLine,
-  Minus,
-  Money,
-  Plus,
-  Trash
+  Money
 } from 'phosphor-react'
+
+import { CoffeSelected } from './components/CoffeSelected/CoffeSelected'
 
 import {
   CheckoutContainer,
@@ -23,11 +22,6 @@ import {
   Title,
   SelectItem,
   CheckoutDetails,
-  Counter,
-  CounterMinusButton,
-  CounterTotal,
-  CounterPlusButton,
-  Item,
   Divider,
   PriceInfo,
   ConfirmButton
@@ -96,55 +90,9 @@ export function Checkout() {
         <Title>Cafés selecionados</Title>
         <CheckoutDetails>
           <div>
-            <Item>
-              <img src="/src/assets/expresso.png" />
-              <div className="details">
-                <div className="title">
-                  <span>Expresso Tradicional</span>
-                  <strong>R$ 9,90</strong>
-                </div>
-                <div className="actions">
-                  <Counter>
-                    <CounterMinusButton>
-                      <Minus size={14} weight="bold" />
-                    </CounterMinusButton>
-                    <CounterTotal>1</CounterTotal>
-                    <CounterPlusButton>
-                      <Plus size={14} weight="bold" />
-                    </CounterPlusButton>
-                  </Counter>
-                  <button className="remove">
-                    <Trash size={16} color="#8047F8" />
-                    <span>REMOVER</span>
-                  </button>
-                </div>
-              </div>
-            </Item>
+            <CoffeSelected />
             <Divider />
-            <Item>
-              <img src="/src/assets/expresso.png" />
-              <div className="details">
-                <div className="title">
-                  <span>Expresso Tradicional</span>
-                  <strong>R$ 9,90</strong>
-                </div>
-                <div className="actions">
-                  <Counter>
-                    <CounterMinusButton>
-                      <Minus size={14} weight="bold" />
-                    </CounterMinusButton>
-                    <CounterTotal>1</CounterTotal>
-                    <CounterPlusButton>
-                      <Plus size={14} weight="bold" />
-                    </CounterPlusButton>
-                  </Counter>
-                  <button className="remove">
-                    <Trash size={16} color="#8047F8" />
-                    <span>REMOVER</span>
-                  </button>
-                </div>
-              </div>
-            </Item>
+            <CoffeSelected />
             <Divider />
           </div>
           <PriceInfo>
