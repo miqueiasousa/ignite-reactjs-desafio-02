@@ -1,4 +1,7 @@
-import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
+import { ShoppingCartSimple } from 'phosphor-react'
+import { useState } from 'react'
+
+import { Counter } from '../Counter/Counter'
 
 import {
   ActionsContainer,
@@ -8,10 +11,6 @@ import {
   CardFooter,
   CardImage,
   CardTitle,
-  Counter,
-  CounterMinusButton,
-  CounterPlusButton,
-  CounterTotal,
   Price,
   Tag,
   TagsContainer
@@ -37,6 +36,8 @@ export function CoffeeCard({
   tags,
   price
 }: CoffeeCardProps) {
+  const [quantityCoffe, setQuantityCoffe] = useState(1)
+
   return (
     <CardContainer>
       <CardImage src={imageUrl} />
@@ -52,15 +53,10 @@ export function CoffeeCard({
           R$ <span>{price}</span>
         </Price>
         <ActionsContainer>
-          <Counter className="quantity">
-            <CounterMinusButton>
-              <Minus size={14} weight="bold" />
-            </CounterMinusButton>
-            <CounterTotal>1</CounterTotal>
-            <CounterPlusButton>
-              <Plus size={14} weight="bold" />
-            </CounterPlusButton>
-          </Counter>
+          <Counter
+            count={quantityCoffe}
+            onChange={quantity => setQuantityCoffe(quantity)}
+          />
           <BuyButton>
             <ShoppingCartSimple size={22} weight="fill" />
           </BuyButton>
