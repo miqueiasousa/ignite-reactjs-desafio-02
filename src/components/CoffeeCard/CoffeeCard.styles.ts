@@ -17,13 +17,6 @@ export const CardImage = styled.img`
   object-fit: cover;
 `
 
-export const CardTitle = styled.h3`
-  font-family: 'Baloo 2', cursive;
-  font-size: ${props => props.theme.fontSize.lg};
-  color: ${props => props.theme.colors.base.subtitle};
-  margin-bottom: 0.5rem;
-`
-
 export const CardDescription = styled.h4`
   font-size: ${props => props.theme.fontSize.sm};
   color: ${props => props.theme.colors.base.label};

@@ -6,13 +6,6 @@ export const CheckoutContainer = styled.main`
   gap: 2rem;
 `
 
-export const Title = styled.h2`
-  font-size: ${props => props.theme.fontSize.lg};
-  line-height: 1.3;
-  color: ${props => props.theme.colors.base.subtitle};
-  margin-bottom: 1rem;
-`
-
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;

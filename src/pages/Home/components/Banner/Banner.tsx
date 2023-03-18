@@ -1,5 +1,7 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
+import { Stack } from '../../../../components/Stack'
+import { Title } from '../../../../components/Title'
 import bannerImage from '../../../../assets/banner.png'
 
 import {
@@ -8,7 +10,6 @@ import {
   Item,
   ItemContainer,
   Subtitle,
-  Title,
   Wrapper
 } from './Banner.styles'
 
@@ -16,13 +17,15 @@ export function Banner() {
   return (
     <BannerContainer>
       <Wrapper>
-        <div>
-          <Title>Encontre o café perfeito para qualquer hora do dia</Title>
+        <Stack spacing={2}>
+          <Title variant="xl">
+            Encontre o café perfeito para qualquer hora do dia
+          </Title>
           <Subtitle>
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
           </Subtitle>
-        </div>
+        </Stack>
         <ItemContainer>
           <Item>
             <IconContainer className="cart">

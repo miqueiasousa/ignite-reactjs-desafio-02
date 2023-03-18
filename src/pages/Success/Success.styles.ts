@@ -7,17 +7,9 @@ export const SuccessContainer = styled.div`
   margin-block: 5rem;
 `
 
-export const SuccessTitle = styled.h1`
-  font-family: 'Baloo 2', cursive;
-  font-size: ${props => props.theme.fontSize['3xl']};
-  color: ${props => props.theme.colors.yellow[900]};
-  margin-bottom: 0.25rem;
-`
-
 export const SuccessSubtitle = styled.h2`
   font-size: ${props => props.theme.fontSize.xl};
   font-weight: 400;
-  margin-bottom: 2.5rem;
 `
 
 export const OrderInfo = styled.div`

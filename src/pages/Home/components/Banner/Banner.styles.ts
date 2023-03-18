@@ -12,14 +12,6 @@ export const Wrapper = styled.div`
   gap: 66px;
 `
 
-export const Title = styled.h1`
-  font-family: 'Baloo 2', cursive;
-  font-size: ${props => props.theme.fontSize['4xl']};
-  font-weight: 700;
-  color: ${props => props.theme.colors.base.title};
-  margin-bottom: 1rem;
-`
-
 export const Subtitle = styled.h2`
   font-size: ${props => props.theme.fontSize.xl};
   font-weight: 400;

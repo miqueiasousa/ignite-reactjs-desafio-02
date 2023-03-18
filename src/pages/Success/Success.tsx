@@ -1,22 +1,26 @@
+import { useTheme } from 'styled-components'
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 
+import { Stack } from '../../components/Stack'
+import { Title } from '../../components/Title'
 import delivery from '../../assets/delivery.svg'
 
-import {
-  OrderInfo,
-  SuccessContainer,
-  SuccessSubtitle,
-  SuccessTitle
-} from './Success.styles'
+import { OrderInfo, SuccessContainer, SuccessSubtitle } from './Success.styles'
 
 export function Success() {
+  const theme = useTheme()
+
   return (
     <SuccessContainer>
-      <div>
-        <SuccessTitle>Uhu! Pedido confirmado</SuccessTitle>
-        <SuccessSubtitle>
-          Agora é só aguardar que logo o café chegará até você
-        </SuccessSubtitle>
+      <Stack spacing={14}>
+        <Stack spacing={1}>
+          <Title variant="lg" color={theme.colors.yellow[900]}>
+            Uhu! Pedido confirmado
+          </Title>
+          <SuccessSubtitle>
+            Agora é só aguardar que logo o café chegará até você
+          </SuccessSubtitle>
+        </Stack>
         <OrderInfo>
           <div className="item">
             <span className="local">
@@ -46,7 +50,7 @@ export function Success() {
             </div>
           </div>
         </OrderInfo>
-      </div>
+      </Stack>
       <img src={delivery} />
     </SuccessContainer>
   )

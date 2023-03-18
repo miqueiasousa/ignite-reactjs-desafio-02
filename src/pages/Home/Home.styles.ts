@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-export const FeedContainer = styled.div`
-  margin-top: 32px;
-  margin-bottom: 157px;
-`
+import { Stack } from '../../components/Stack'
 
-export const Title = styled.h2`
-  font-family: 'Baloo 2', cursive;
-  font-size: ${props => props.theme.fontSize['3xl']};
-  color: ${props => props.theme.colors.base.subtitle};
-  margin-bottom: 54px;
+export const FeedContainer = styled(Stack)`
+  margin-top: 110px;
+  margin-bottom: 157px;
 `
 
 export const Feed = styled.div`

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useTheme } from 'styled-components'
 import {
   Bank,
   CreditCard,
@@ -7,8 +8,10 @@ import {
   Money
 } from 'phosphor-react'
 
-import { CoffeSelected } from './components/CoffeSelected/CoffeSelected'
+import { Title } from '../../components/Title'
+import { Stack } from '../../components/Stack'
 
+import { CoffeSelected } from './components/CoffeSelected/CoffeSelected'
 import {
   CheckoutContainer,
   Form,
@@ -19,7 +22,6 @@ import {
   FormGroup,
   Input,
   Select,
-  Title,
   SelectItem,
   CheckoutDetails,
   Divider,
@@ -29,11 +31,14 @@ import {
 
 export function Checkout() {
   const navigate = useNavigate()
+  const theme = useTheme()
 
   return (
     <CheckoutContainer>
-      <div>
-        <Title>Complete seu pedido</Title>
+      <Stack spacing={4}>
+        <Title as="h2" variant="xs" color={theme.colors.base.subtitle}>
+          Complete seu pedido
+        </Title>
         <FormContainer>
           <Form>
             <FormHeader>
@@ -85,9 +90,11 @@ export function Checkout() {
             </Select>
           </Form>
         </FormContainer>
-      </div>
-      <div>
-        <Title>Cafés selecionados</Title>
+      </Stack>
+      <Stack spacing={4}>
+        <Title as="h2" variant="xs" color={theme.colors.base.subtitle}>
+          Cafés selecionados
+        </Title>
         <CheckoutDetails>
           <div>
             <CoffeSelected />
@@ -113,7 +120,7 @@ export function Checkout() {
             Confirmar pedido
           </ConfirmButton>
         </CheckoutDetails>
-      </div>
+      </Stack>
     </CheckoutContainer>
   )
 }

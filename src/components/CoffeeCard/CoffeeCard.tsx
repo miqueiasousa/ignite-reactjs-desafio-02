@@ -1,7 +1,10 @@
-import { ShoppingCartSimple } from 'phosphor-react'
 import { useState } from 'react'
+import { useTheme } from 'styled-components'
+import { ShoppingCartSimple } from 'phosphor-react'
 
 import { Counter } from '../Counter/Counter'
+import { Stack } from '../Stack'
+import { Title } from '../Title'
 
 import {
   ActionsContainer,
@@ -10,7 +13,6 @@ import {
   CardDescription,
   CardFooter,
   CardImage,
-  CardTitle,
   Price,
   Tag,
   TagsContainer
@@ -37,6 +39,7 @@ export function CoffeeCard({
   price
 }: CoffeeCardProps) {
   const [quantityCoffe, setQuantityCoffe] = useState(1)
+  const theme = useTheme()
 
   return (
     <CardContainer>
@@ -46,8 +49,12 @@ export function CoffeeCard({
           <Tag key={tag.id}>{tag.description}</Tag>
         ))}
       </TagsContainer>
-      <CardTitle>{name}</CardTitle>
-      <CardDescription>{description}</CardDescription>
+      <Stack spacing={2}>
+        <Title as="h3" variant="xs" color={theme.colors.base.subtitle}>
+          {name}
+        </Title>
+        <CardDescription>{description}</CardDescription>
+      </Stack>
       <CardFooter>
         <Price>
           R$ <span>{price}</span>

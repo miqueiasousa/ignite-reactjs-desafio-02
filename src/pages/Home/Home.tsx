@@ -1,7 +1,10 @@
-import { CoffeeCard } from '../../components/CoffeeCard/CoffeeCard'
-import { Banner } from './components/Banner/Banner'
+import { useTheme } from 'styled-components'
 
-import { Feed, FeedContainer, Title } from './Home.styles'
+import { CoffeeCard } from '../../components/CoffeeCard/CoffeeCard'
+import { Title } from '../../components/Title'
+
+import { Banner } from './components/Banner/Banner'
+import { Feed, FeedContainer } from './Home.styles'
 
 const coffeeList = [
   {
@@ -153,11 +156,15 @@ const coffeeList = [
 ]
 
 export function Home() {
+  const theme = useTheme()
+
   return (
     <main>
       <Banner />
-      <FeedContainer>
-        <Title>Nossos cafés</Title>
+      <FeedContainer spacing={18}>
+        <Title as="h2" variant="lg" color={theme.colors.base.subtitle}>
+          Nossos cafés
+        </Title>
         <Feed>
           {coffeeList.map(coffe => (
             <CoffeeCard
