@@ -1,11 +1,6 @@
 import { Minus, Plus } from 'phosphor-react'
 
-import {
-  CounterContainer,
-  CounterMinusButton,
-  CounterPlusButton,
-  CounterTotal
-} from './Counter.styles'
+import * as S from './Counter.styles'
 
 interface CounterProps {
   count: number
@@ -22,14 +17,14 @@ export function Counter({ count, onChange }: CounterProps) {
   }
 
   return (
-    <CounterContainer>
-      <CounterMinusButton onClick={handleDecrement}>
+    <S.CounterContainer>
+      <S.CounterMinusButton onClick={handleDecrement}>
         <Minus size={14} weight="bold" />
-      </CounterMinusButton>
-      <CounterTotal>{count}</CounterTotal>
-      <CounterPlusButton onClick={handleIncrement}>
+      </S.CounterMinusButton>
+      <S.CounterTotal>{count}</S.CounterTotal>
+      <S.CounterPlusButton onClick={handleIncrement}>
         <Plus size={14} weight="bold" />
-      </CounterPlusButton>
-    </CounterContainer>
+      </S.CounterPlusButton>
+    </S.CounterContainer>
   )
 }

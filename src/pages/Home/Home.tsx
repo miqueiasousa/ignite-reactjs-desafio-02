@@ -6,16 +6,7 @@ import { Stack } from '../../components/Stack'
 import { Title } from '../../components/Title'
 import bannerImage from '../../assets/banner.png'
 
-import {
-  BannerContainer,
-  IconContainer,
-  Item,
-  ItemContainer,
-  Subtitle,
-  Wrapper,
-  Feed,
-  FeedContainer
-} from './Home.styles'
+import * as S from './Home.styles'
 
 const coffeeList = [
   {
@@ -171,51 +162,51 @@ export function Home() {
 
   return (
     <main>
-      <BannerContainer>
-        <Wrapper>
+      <S.BannerContainer>
+        <S.Wrapper>
           <Stack spacing={2}>
             <Title variant="xl">
               Encontre o café perfeito para qualquer hora do dia
             </Title>
-            <Subtitle>
+            <S.Subtitle>
               Com o Coffee Delivery você recebe seu café onde estiver, a
               qualquer hora
-            </Subtitle>
+            </S.Subtitle>
           </Stack>
-          <ItemContainer>
-            <Item>
-              <IconContainer className="cart">
+          <S.ItemContainer>
+            <S.Item>
+              <S.IconContainer className="cart">
                 <ShoppingCart size={16} weight="fill" />
-              </IconContainer>
+              </S.IconContainer>
               <span>Compra simples e segura</span>
-            </Item>
-            <Item>
-              <IconContainer className="package">
+            </S.Item>
+            <S.Item>
+              <S.IconContainer className="package">
                 <Package size={16} weight="fill" />
-              </IconContainer>
+              </S.IconContainer>
               <span>Embalagem mantém o café intacto</span>
-            </Item>
-            <Item>
-              <IconContainer className="timer">
+            </S.Item>
+            <S.Item>
+              <S.IconContainer className="timer">
                 <Timer size={16} weight="fill" />
-              </IconContainer>
+              </S.IconContainer>
               <span>Entrega rápida e rastreada</span>
-            </Item>
-            <Item>
-              <IconContainer className="coffee">
+            </S.Item>
+            <S.Item>
+              <S.IconContainer className="coffee">
                 <Coffee size={16} weight="fill" />
-              </IconContainer>
+              </S.IconContainer>
               <span>O café chega fresquinho até você</span>
-            </Item>
-          </ItemContainer>
-        </Wrapper>
+            </S.Item>
+          </S.ItemContainer>
+        </S.Wrapper>
         <img src={bannerImage} />
-      </BannerContainer>
-      <FeedContainer spacing={18}>
+      </S.BannerContainer>
+      <S.FeedContainer spacing={18}>
         <Title as="h2" variant="lg" color={theme.colors.base.subtitle}>
           Nossos cafés
         </Title>
-        <Feed>
+        <S.Feed>
           {coffeeList.map(coffe => (
             <CoffeeCard
               key={coffe.id}
@@ -226,8 +217,8 @@ export function Home() {
               price={coffe.price}
             />
           ))}
-        </Feed>
-      </FeedContainer>
+        </S.Feed>
+      </S.FeedContainer>
     </main>
   )
 }

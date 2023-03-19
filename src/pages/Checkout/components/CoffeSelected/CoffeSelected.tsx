@@ -3,13 +3,13 @@ import { Trash } from 'phosphor-react'
 
 import { Counter } from '../../../../components/Counter/Counter'
 
-import { Item } from './CoffeSelected.styles'
+import * as S from './CoffeSelected.styles'
 
 export function CoffeSelected() {
   const [quantityCoffe, setQuantityCoffe] = useState(1)
 
   return (
-    <Item>
+    <S.Item>
       <img src="/src/assets/expresso.png" />
       <div className="details">
         <div className="title">
@@ -27,6 +27,6 @@ export function CoffeSelected() {
           </button>
         </div>
       </div>
-    </Item>
+    </S.Item>
   )
 }

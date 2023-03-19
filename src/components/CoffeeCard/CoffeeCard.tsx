@@ -6,17 +6,7 @@ import { Counter } from '../Counter/Counter'
 import { Stack } from '../Stack'
 import { Title } from '../Title'
 
-import {
-  ActionsContainer,
-  BuyButton,
-  CardContainer,
-  CardDescription,
-  CardFooter,
-  CardImage,
-  Price,
-  Tag,
-  TagsContainer
-} from './CoffeeCard.styles'
+import * as S from './CoffeeCard.styles'
 
 interface Tag {
   id: number
@@ -42,33 +32,33 @@ export function CoffeeCard({
   const theme = useTheme()
 
   return (
-    <CardContainer>
-      <CardImage src={imageUrl} />
-      <TagsContainer>
+    <S.CardContainer>
+      <S.CardImage src={imageUrl} />
+      <S.TagsContainer>
         {tags.map(tag => (
-          <Tag key={tag.id}>{tag.description}</Tag>
+          <S.Tag key={tag.id}>{tag.description}</S.Tag>
         ))}
-      </TagsContainer>
+      </S.TagsContainer>
       <Stack spacing={2}>
         <Title as="h3" variant="xs" color={theme.colors.base.subtitle}>
           {name}
         </Title>
-        <CardDescription>{description}</CardDescription>
+        <S.CardDescription>{description}</S.CardDescription>
       </Stack>
-      <CardFooter>
-        <Price>
+      <S.CardFooter>
+        <S.Price>
           R$ <span>{price}</span>
-        </Price>
-        <ActionsContainer>
+        </S.Price>
+        <S.ActionsContainer>
           <Counter
             count={quantityCoffe}
             onChange={quantity => setQuantityCoffe(quantity)}
           />
-          <BuyButton>
+          <S.BuyButton>
             <ShoppingCartSimple size={22} weight="fill" />
-          </BuyButton>
-        </ActionsContainer>
-      </CardFooter>
-    </CardContainer>
+          </S.BuyButton>
+        </S.ActionsContainer>
+      </S.CardFooter>
+    </S.CardContainer>
   )
 }

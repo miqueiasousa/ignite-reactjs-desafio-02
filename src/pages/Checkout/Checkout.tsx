@@ -12,97 +12,82 @@ import { Title } from '../../components/Title'
 import { Stack } from '../../components/Stack'
 
 import { CoffeSelected } from './components/CoffeSelected/CoffeSelected'
-import {
-  CheckoutContainer,
-  Form,
-  FormContainer,
-  FormDescription,
-  FormHeader,
-  FormTitle,
-  FormGroup,
-  Input,
-  Select,
-  SelectItem,
-  CheckoutDetails,
-  Divider,
-  PriceInfo,
-  ConfirmButton
-} from './Checkout.styles'
+import * as S from './Checkout.styles'
 
 export function Checkout() {
   const navigate = useNavigate()
   const theme = useTheme()
 
   return (
-    <CheckoutContainer>
+    <S.CheckoutContainer>
       <Stack spacing={4}>
         <Title as="h2" variant="xs" color={theme.colors.base.subtitle}>
           Complete seu pedido
         </Title>
-        <FormContainer>
-          <Form>
-            <FormHeader>
+        <S.FormContainer>
+          <S.Form>
+            <S.FormHeader>
               <MapPinLine size={22} color="#C47F17" />
               <div>
-                <FormTitle>Endereço de Entrega</FormTitle>
-                <FormDescription>
+                <S.FormTitle>Endereço de Entrega</S.FormTitle>
+                <S.FormDescription>
                   Informe o endereço onde deseja receber seu pedido
-                </FormDescription>
+                </S.FormDescription>
               </div>
-            </FormHeader>
-            <FormGroup>
-              <Input id="cep" type="text" placeholder="CEP" />
-              <Input id="rua" type="text" placeholder="Rua" />
-              <Input id="numero" type="number" placeholder="Número" />
-              <Input id="complemento" type="text" placeholder="Complemento" />
-              <Input id="bairro" type="text" placeholder="Bairro" />
-              <Input id="cidade" type="text" placeholder="Cidade" />
-              <Input id="uf" type="text" placeholder="UF" />
-            </FormGroup>
-          </Form>
-          <Form>
-            <FormHeader>
+            </S.FormHeader>
+            <S.FormGroup>
+              <S.Input id="cep" type="text" placeholder="CEP" />
+              <S.Input id="rua" type="text" placeholder="Rua" />
+              <S.Input id="numero" type="number" placeholder="Número" />
+              <S.Input id="complemento" type="text" placeholder="Complemento" />
+              <S.Input id="bairro" type="text" placeholder="Bairro" />
+              <S.Input id="cidade" type="text" placeholder="Cidade" />
+              <S.Input id="uf" type="text" placeholder="UF" />
+            </S.FormGroup>
+          </S.Form>
+          <S.Form>
+            <S.FormHeader>
               <CurrencyDollar size={22} color="#8047F8" />
               <div>
-                <FormTitle>Pagamento</FormTitle>
-                <FormDescription>
+                <S.FormTitle>Pagamento</S.FormTitle>
+                <S.FormDescription>
                   O pagamento é feito na entrega. Escolha a forma que deseja
                   pagar
-                </FormDescription>
+                </S.FormDescription>
               </div>
-            </FormHeader>
-            <Select>
-              <SelectItem>
+            </S.FormHeader>
+            <S.Select>
+              <S.SelectItem>
                 {/* <input type="radio" name="payment" value="credit" /> */}
                 <CreditCard size={16} />
                 <span>Cartão de crédito</span>
-              </SelectItem>
-              <SelectItem>
+              </S.SelectItem>
+              <S.SelectItem>
                 {/* <input type="radio" name="payment" value="debit" /> */}
                 <Bank size={16} />
                 <span>cartão de débito</span>
-              </SelectItem>
-              <SelectItem>
+              </S.SelectItem>
+              <S.SelectItem>
                 {/* <input type="radio" name="payment" value="cash" /> */}
                 <Money size={16} />
                 <span>dinheiro</span>
-              </SelectItem>
-            </Select>
-          </Form>
-        </FormContainer>
+              </S.SelectItem>
+            </S.Select>
+          </S.Form>
+        </S.FormContainer>
       </Stack>
       <Stack spacing={4}>
         <Title as="h2" variant="xs" color={theme.colors.base.subtitle}>
           Cafés selecionados
         </Title>
-        <CheckoutDetails>
+        <S.CheckoutDetails>
           <div>
             <CoffeSelected />
-            <Divider />
+            <S.Divider />
             <CoffeSelected />
-            <Divider />
+            <S.Divider />
           </div>
-          <PriceInfo>
+          <S.PriceInfo>
             <div className="price">
               <span>Total de itens</span>
               <span>R$ 29,70</span>
@@ -115,12 +100,12 @@ export function Checkout() {
               <span>Total</span>
               <span>R$ 33,20</span>
             </div>
-          </PriceInfo>
-          <ConfirmButton onClick={() => navigate('/checkout/success')}>
+          </S.PriceInfo>
+          <S.ConfirmButton onClick={() => navigate('/checkout/success')}>
             Confirmar pedido
-          </ConfirmButton>
-        </CheckoutDetails>
+          </S.ConfirmButton>
+        </S.CheckoutDetails>
       </Stack>
-    </CheckoutContainer>
+    </S.CheckoutContainer>
   )
 }

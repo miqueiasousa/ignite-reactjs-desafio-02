@@ -5,23 +5,23 @@ import { Stack } from '../../components/Stack'
 import { Title } from '../../components/Title'
 import delivery from '../../assets/delivery.svg'
 
-import { OrderInfo, SuccessContainer, SuccessSubtitle } from './Success.styles'
+import * as S from './Success.styles'
 
 export function Success() {
   const theme = useTheme()
 
   return (
-    <SuccessContainer>
+    <S.SuccessContainer>
       <Stack spacing={14}>
         <Stack spacing={1}>
           <Title variant="lg" color={theme.colors.yellow[900]}>
             Uhu! Pedido confirmado
           </Title>
-          <SuccessSubtitle>
+          <S.SuccessSubtitle>
             Agora é só aguardar que logo o café chegará até você
-          </SuccessSubtitle>
+          </S.SuccessSubtitle>
         </Stack>
-        <OrderInfo>
+        <S.OrderInfo>
           <div className="item">
             <span className="local">
               <MapPin size={16} weight="fill" />
@@ -49,9 +49,9 @@ export function Success() {
               <span>Cartão de Crédito</span>
             </div>
           </div>
-        </OrderInfo>
+        </S.OrderInfo>
       </Stack>
       <img src={delivery} />
-    </SuccessContainer>
+    </S.SuccessContainer>
   )
 }
