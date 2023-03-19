@@ -2,19 +2,18 @@ import styled from 'styled-components'
 
 import { Stack } from '../../components/Stack'
 
+interface AvatarProps {
+  bgColor: string
+}
+
 export const BannerContainer = styled.div`
   display: flex;
   gap: 3.5rem;
-  margin: 5.75rem 0;
+  padding-top: 5.875rem;
+  padding-bottom: 6.75rem;
 `
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 66px;
-`
-
-export const Subtitle = styled.h2`
+export const Description = styled.p`
   font-size: ${props => props.theme.fontSize.xl};
   font-weight: 400;
   color: ${props => props.theme.colors.base.subtitle};
@@ -22,42 +21,31 @@ export const Subtitle = styled.h2`
 
 export const ItemContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 20px;
+  grid-template-columns: repeat(2, auto);
+  row-gap: 1.25rem;
+  column-gap: 2.5rem;
 `
 
 export const Item = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 `
 
-export const IconContainer = styled.div`
-  display: inline-flex;
-  padding: 0.5rem;
+export const Avatar = styled.div<AvatarProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: ${props => props.bgColor};
   color: ${props => props.theme.colors.white};
-  border-radius: 9999px;
-
-  &.cart {
-    background-color: ${props => props.theme.colors.yellow[900]};
-  }
-
-  &.package {
-    background-color: ${props => props.theme.colors.base.text};
-  }
-
-  &.timer {
-    background-color: ${props => props.theme.colors.yellow[500]};
-  }
-
-  &.coffee {
-    background-color: ${props => props.theme.colors.purple[500]};
-  }
+  border-radius: 50%;
 `
 
-export const FeedContainer = styled(Stack)`
-  margin-top: 110px;
-  margin-bottom: 157px;
+export const FeedWrapper = styled(Stack)`
+  padding-top: 2rem;
+  padding-bottom: 9.875rem;
 `
 
 export const Feed = styled.div`

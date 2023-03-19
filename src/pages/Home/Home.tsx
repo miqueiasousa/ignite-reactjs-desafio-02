@@ -163,46 +163,46 @@ export function Home() {
   return (
     <main>
       <S.BannerContainer>
-        <S.Wrapper>
-          <Stack spacing={2}>
+        <Stack spacing={20}>
+          <Stack spacing={4}>
             <Title variant="xl">
               Encontre o café perfeito para qualquer hora do dia
             </Title>
-            <S.Subtitle>
+            <S.Description>
               Com o Coffee Delivery você recebe seu café onde estiver, a
               qualquer hora
-            </S.Subtitle>
+            </S.Description>
           </Stack>
           <S.ItemContainer>
             <S.Item>
-              <S.IconContainer className="cart">
+              <S.Avatar bgColor={theme.colors.yellow[900]}>
                 <ShoppingCart size={16} weight="fill" />
-              </S.IconContainer>
+              </S.Avatar>
               <span>Compra simples e segura</span>
             </S.Item>
             <S.Item>
-              <S.IconContainer className="package">
+              <S.Avatar bgColor={theme.colors.base.text}>
                 <Package size={16} weight="fill" />
-              </S.IconContainer>
+              </S.Avatar>
               <span>Embalagem mantém o café intacto</span>
             </S.Item>
             <S.Item>
-              <S.IconContainer className="timer">
+              <S.Avatar bgColor={theme.colors.yellow[500]}>
                 <Timer size={16} weight="fill" />
-              </S.IconContainer>
+              </S.Avatar>
               <span>Entrega rápida e rastreada</span>
             </S.Item>
             <S.Item>
-              <S.IconContainer className="coffee">
+              <S.Avatar bgColor={theme.colors.purple[500]}>
                 <Coffee size={16} weight="fill" />
-              </S.IconContainer>
+              </S.Avatar>
               <span>O café chega fresquinho até você</span>
             </S.Item>
           </S.ItemContainer>
-        </S.Wrapper>
+        </Stack>
         <img src={bannerImage} />
       </S.BannerContainer>
-      <S.FeedContainer spacing={18}>
+      <S.FeedWrapper spacing={18}>
         <Title as="h2" variant="lg" color={theme.colors.base.subtitle}>
           Nossos cafés
         </Title>
@@ -218,7 +218,7 @@ export function Home() {
             />
           ))}
         </S.Feed>
-      </S.FeedContainer>
+      </S.FeedWrapper>
     </main>
   )
 }
