@@ -8,7 +8,7 @@ export function Header() {
   return (
     <S.HeaderContainer>
       <img src={coffeDeliveryLogo} alt="Logotipo Coffe Delivery" />
-      <div>
+      <S.NavContainer>
         <S.LocationButton type="button" className="location">
           <MapPin weight="fill" size={22} />
           <span>Porto Alegre, RS</span>
@@ -16,7 +16,7 @@ export function Header() {
         <S.CartButton to="/checkout">
           <ShoppingCart weight="fill" size={22} />
         </S.CartButton>
-      </div>
+      </S.NavContainer>
     </S.HeaderContainer>
   )
 }

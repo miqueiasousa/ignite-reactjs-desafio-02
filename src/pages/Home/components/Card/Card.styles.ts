@@ -37,21 +37,10 @@ export const CardBody = styled(Stack)`
 
 export const CardFooter = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto;
   column-gap: 0.5rem;
   align-items: center;
-
-  > :nth-child(1) {
-    grid-column: 1 / 2;
-  }
-
-  > :nth-child(2) {
-    grid-column: 3 / 4;
-  }
-
-  > :nth-child(3) {
-    grid-column: 4 / 5;
-  }
+  justify-items: end;
 `
 
 export const TagContainer = styled.div`

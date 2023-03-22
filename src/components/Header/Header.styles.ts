@@ -5,11 +5,15 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 2rem 0;
+  background-color: ${props => props.theme.colors.background};
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+`
 
-  div {
-    display: flex;
-    gap: 12px;
-  }
+export const NavContainer = styled.div`
+  display: flex;
+  gap: 0.75rem;
 `
 
 export const LocationButton = styled.button`
@@ -22,6 +26,7 @@ export const LocationButton = styled.button`
   font-size: ${props => props.theme.fontSize.sm};
   background-color: ${props => props.theme.colors.purple[100]};
   color: ${props => props.theme.colors.purple[900]};
+  justify-self: end;
 `
 
 export const CartButton = styled(NavLink)`
@@ -34,4 +39,5 @@ export const CartButton = styled(NavLink)`
   font-size: ${props => props.theme.fontSize.sm};
   background-color: ${props => props.theme.colors.yellow[100]};
   color: ${props => props.theme.colors.yellow[900]};
+  justify-self: end;
 `
