@@ -1,64 +1,83 @@
 import styled from 'styled-components'
 
+import { Stack } from '../Stack'
+
 export const CardContainer = styled.div`
-  padding: 20px;
-  background-color: ${props => props.theme.colors.base.card};
-  border-radius: 6px 36px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: ${props => props.theme.colors.base.card};
+  padding: 1.25rem;
+  border-radius: 6px 36px;
 `
 
 export const CardImage = styled.img`
-  margin-top: -2.5rem;
   width: 7.5rem;
   height: 7.5rem;
   object-fit: cover;
+  margin-top: calc(0rem - 1.25rem - 1.25rem);
 `
 
-export const CardDescription = styled.h4`
-  font-size: ${props => props.theme.fontSize.sm};
-  color: ${props => props.theme.colors.base.label};
-  font-weight: 400;
+export const CardHeader = styled(Stack)`
+  align-items: center;
+`
+
+export const CardBody = styled(Stack)`
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  p {
+    font-size: ${props => props.theme.fontSize.sm};
+    color: ${props => props.theme.colors.base.label};
+    font-weight: 400;
+  }
 `
 
 export const CardFooter = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  column-gap: 0.5rem;
   align-items: center;
-  margin-top: 2rem;
+
+  > :nth-child(1) {
+    grid-column: 1 / 2;
+  }
+
+  > :nth-child(2) {
+    grid-column: 3 / 4;
+  }
+
+  > :nth-child(3) {
+    grid-column: 4 / 5;
+  }
 `
 
-export const TagsContainer = styled.div`
-  margin: 0.75rem 0 1rem 0;
+export const TagContainer = styled.div`
   display: flex;
+  justify-content: center;
   gap: 0.25rem;
+  flex-wrap: wrap;
 `
 
 export const Tag = styled.span`
   background-color: ${props => props.theme.colors.yellow[100]};
   color: ${props => props.theme.colors.yellow[900]};
   font-size: ${props => props.theme.fontSize['2xs']};
-  padding: 0.25rem 0.5rem;
   font-weight: 700;
+  padding: 0.25rem 0.5rem;
   text-transform: uppercase;
   border-radius: 100px;
 `
 
-export const Price = styled.div`
+export const Price = styled.span`
   font-size: ${props => props.theme.fontSize.sm};
 
-  span {
+  strong {
     font-family: 'Baloo 2', cursive;
     font-size: ${props => props.theme.fontSize['2xl']};
   }
-`
-
-export const ActionsContainer = styled.div`
-  display: flex;
-  gap: 0.5rem;
 `
 
 export const BuyButton = styled.button`

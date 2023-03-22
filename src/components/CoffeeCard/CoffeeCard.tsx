@@ -33,31 +33,31 @@ export function CoffeeCard({
 
   return (
     <S.CardContainer>
-      <S.CardImage src={imageUrl} />
-      <S.TagsContainer>
-        {tags.map(tag => (
-          <S.Tag key={tag.id}>{tag.description}</S.Tag>
-        ))}
-      </S.TagsContainer>
-      <Stack spacing={2}>
-        <Title as="h3" variant="xs" color={theme.colors.base.subtitle}>
+      <S.CardHeader spacing={3}>
+        <S.CardImage src={imageUrl} />
+        <S.TagContainer>
+          {tags.map(tag => (
+            <S.Tag key={tag.id}>{tag.description}</S.Tag>
+          ))}
+        </S.TagContainer>
+      </S.CardHeader>
+      <S.CardBody spacing={2}>
+        <Title as="h2" variant="xs" color={theme.colors.base.subtitle}>
           {name}
         </Title>
-        <S.CardDescription>{description}</S.CardDescription>
-      </Stack>
+        <p>{description}</p>
+      </S.CardBody>
       <S.CardFooter>
         <S.Price>
-          R$ <span>{price}</span>
+          R$ <strong>{price}</strong>
         </S.Price>
-        <S.ActionsContainer>
-          <Counter
-            count={quantityCoffe}
-            onChange={quantity => setQuantityCoffe(quantity)}
-          />
-          <S.BuyButton>
-            <ShoppingCartSimple size={22} weight="fill" />
-          </S.BuyButton>
-        </S.ActionsContainer>
+        <Counter
+          count={quantityCoffe}
+          onChange={quantity => setQuantityCoffe(quantity)}
+        />
+        <S.BuyButton>
+          <ShoppingCartSimple size={22} weight="fill" />
+        </S.BuyButton>
       </S.CardFooter>
     </S.CardContainer>
   )
