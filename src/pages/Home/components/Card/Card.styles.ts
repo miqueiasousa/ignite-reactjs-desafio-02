@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Stack } from '../Stack'
+import { Stack } from '../../../../components/Stack'
 
 export const CardContainer = styled.div`
   display: flex;

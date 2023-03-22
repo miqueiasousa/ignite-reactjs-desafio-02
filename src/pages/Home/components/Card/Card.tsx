@@ -2,18 +2,17 @@ import { useState } from 'react'
 import { useTheme } from 'styled-components'
 import { ShoppingCartSimple } from 'phosphor-react'
 
-import { Counter } from '../Counter/Counter'
-import { Stack } from '../Stack'
-import { Title } from '../Title'
+import { Counter } from '../../../../components/Counter/Counter'
+import { Title } from '../../../../components/Title'
 
-import * as S from './CoffeeCard.styles'
+import * as S from './Card.styles'
 
 interface Tag {
   id: number
   description: string
 }
 
-interface CoffeeCardProps {
+interface CardProps {
   name: string
   description: string
   imageUrl: string
@@ -21,13 +20,7 @@ interface CoffeeCardProps {
   price: string
 }
 
-export function CoffeeCard({
-  name,
-  description,
-  imageUrl,
-  tags,
-  price
-}: CoffeeCardProps) {
+export function Card({ name, description, imageUrl, tags, price }: CardProps) {
   const [quantityCoffe, setQuantityCoffe] = useState(1)
   const theme = useTheme()
 

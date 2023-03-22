@@ -1,11 +1,11 @@
 import { useTheme } from 'styled-components'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
-import { CoffeeCard } from '../../components/CoffeeCard/CoffeeCard'
 import { Stack } from '../../components/Stack'
 import { Title } from '../../components/Title'
 import bannerImage from '../../assets/banner.png'
 
+import { Card } from './components/Card/Card'
 import * as S from './Home.styles'
 
 const coffeeList = [
@@ -208,7 +208,7 @@ export function Home() {
         </Title>
         <S.Feed>
           {coffeeList.map(coffe => (
-            <CoffeeCard
+            <Card
               key={coffe.id}
               name={coffe.name}
               description={coffe.description}
