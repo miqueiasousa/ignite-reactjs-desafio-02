@@ -91,34 +91,40 @@ export const LabelSelect = styled.label`
   }
 `
 
-export const CheckoutDetails = styled.div`
+export const Summary = styled.div`
   background-color: ${props => props.theme.colors.base.card};
   border-radius: 6px 44px;
   padding: 2.5rem;
 `
 
-export const Divider = styled.span`
-  display: flex;
-  height: 1px;
-  background-color: ${props => props.theme.colors.base.button};
-  margin-block: 1.5rem;
+export const ItemContainer = styled.ul`
+  list-style: none;
+
+  li::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: ${props => props.theme.colors.base.button};
+    margin-block: 1.5rem;
+  }
 `
 
-export const PriceInfo = styled.div`
+export const OrderSummary = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 
-  .price {
+  div {
     display: flex;
     justify-content: space-between;
     font-size: ${props => props.theme.fontSize.sm};
-  }
 
-  .price:last-child {
-    font-size: ${props => props.theme.fontSize.xl};
-    font-weight: 700;
+    :last-child {
+      font-size: ${props => props.theme.fontSize.xl};
+      font-weight: 700;
+    }
   }
 `
 

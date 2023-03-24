@@ -11,7 +11,7 @@ import {
 import { Title } from '../../components/Title'
 import { Stack } from '../../components/Stack'
 
-import { CoffeSelected } from './components/CoffeSelected/CoffeSelected'
+import { Item } from './components/Item/Item'
 import * as S from './Checkout.styles'
 
 export function Checkout() {
@@ -122,31 +122,33 @@ export function Checkout() {
         <Title as="h2" variant="xs" color={theme.colors.base.subtitle}>
           Cafés selecionados
         </Title>
-        <S.CheckoutDetails>
-          <div>
-            <CoffeSelected />
-            <S.Divider />
-            <CoffeSelected />
-            <S.Divider />
-          </div>
-          <S.PriceInfo>
-            <div className="price">
+        <S.Summary>
+          <S.ItemContainer>
+            <li>
+              <Item />
+            </li>
+            <li>
+              <Item />
+            </li>
+          </S.ItemContainer>
+          <S.OrderSummary>
+            <div>
               <span>Total de itens</span>
               <span>R$ 29,70</span>
             </div>
-            <div className="price">
+            <div>
               <span>Entrega</span>
               <span>R$ 3,50</span>
             </div>
-            <div className="price">
+            <div>
               <span>Total</span>
               <span>R$ 33,20</span>
             </div>
-          </S.PriceInfo>
+          </S.OrderSummary>
           <S.ConfirmButton onClick={() => navigate('/checkout/success')}>
             Confirmar pedido
           </S.ConfirmButton>
-        </S.CheckoutDetails>
+        </S.Summary>
       </Stack>
     </S.CheckoutContainer>
   )
