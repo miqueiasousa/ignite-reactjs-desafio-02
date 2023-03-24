@@ -87,12 +87,12 @@ export const Input = styled.input`
 `
 
 export const Select = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
 `
 
-export const SelectItem = styled.div`
-  flex: 1;
+export const SelectItem = styled.label`
   display: flex;
   gap: 0.75rem;
   padding: 1rem;
@@ -105,6 +105,11 @@ export const SelectItem = styled.div`
 
   & svg {
     color: ${props => props.theme.colors.purple[500]};
+  }
+
+  input:is(:checked) ~ & {
+    background-color: ${props => props.theme.colors.purple[100]};
+    outline: 2px solid ${props => props.theme.colors.purple[500]};
   }
 `
 

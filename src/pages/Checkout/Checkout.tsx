@@ -57,21 +57,45 @@ export function Checkout() {
               </div>
             </S.FormHeader>
             <S.Select>
-              <S.SelectItem>
-                {/* <input type="radio" name="payment" value="credit" /> */}
-                <CreditCard size={16} />
-                <span>Cartão de crédito</span>
-              </S.SelectItem>
-              <S.SelectItem>
-                {/* <input type="radio" name="payment" value="debit" /> */}
-                <Bank size={16} />
-                <span>cartão de débito</span>
-              </S.SelectItem>
-              <S.SelectItem>
-                {/* <input type="radio" name="payment" value="cash" /> */}
-                <Money size={16} />
-                <span>dinheiro</span>
-              </S.SelectItem>
+              <div>
+                <input
+                  type="radio"
+                  name="payment"
+                  value="credit"
+                  id="credit"
+                  hidden
+                />
+                <S.SelectItem htmlFor="credit">
+                  <CreditCard size={16} />
+                  <span>Cartão de crédito</span>
+                </S.SelectItem>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="payment"
+                  value="debit"
+                  id="debit"
+                  hidden
+                />
+                <S.SelectItem htmlFor="debit">
+                  <Bank size={16} />
+                  <span>cartão de débito</span>
+                </S.SelectItem>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="payment"
+                  value="cash"
+                  id="cash"
+                  hidden
+                />
+                <S.SelectItem htmlFor="cash">
+                  <Money size={16} />
+                  <span>dinheiro</span>
+                </S.SelectItem>
+              </div>
             </S.Select>
           </S.Form>
         </S.FormContainer>
