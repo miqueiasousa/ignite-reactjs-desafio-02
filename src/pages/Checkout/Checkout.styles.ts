@@ -1,18 +1,24 @@
 import styled from 'styled-components'
 
+interface FormBodyProps {
+  gridTemplateColumns: string
+}
+
+interface FormItemProps {
+  gridColumns: number
+}
+
 export const CheckoutContainer = styled.main`
   display: grid;
   grid-template-columns: 1fr 28rem;
   gap: 2rem;
-`
-
-export const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  padding-block: 2.5rem;
 `
 
 export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background-color: ${props => props.theme.colors.base.card};
   border-radius: 6px;
   padding: 2.5rem;
@@ -21,53 +27,29 @@ export const Form = styled.form`
 export const FormHeader = styled.div`
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 2rem;
 `
 
-export const FormTitle = styled.h3`
+export const FormTitle = styled.h4`
   font-size: ${props => props.theme.fontSize.base};
   font-weight: 400;
   color: ${props => props.theme.colors.base.subtitle};
 `
 
-export const FormDescription = styled.span`
+export const FormDescription = styled.p`
   font-size: ${props => props.theme.fontSize.sm};
   color: ${props => props.theme.colors.base.text};
 `
 
-export const FormGroup = styled.div`
+export const FormBody = styled.div<FormBodyProps>`
   display: grid;
-  grid-template-columns: 12.5rem 1fr 3.75rem;
+  grid-template-columns: ${props =>
+    props.gridTemplateColumns.replaceAll('_', ' ')};
   column-gap: 0.75rem;
   row-gap: 1rem;
+`
 
-  #cep {
-    grid-column: 1 / 2;
-  }
-
-  #rua {
-    grid-column: 1 / span 3;
-  }
-
-  #numero {
-    grid-column: 1 / 2;
-  }
-
-  #complemento {
-    grid-column: 2 / span 2;
-  }
-
-  #bairro {
-    grid-column: 1 / 2;
-  }
-
-  #cidade {
-    grid-column: 2 / 3;
-  }
-
-  #uf {
-    grid-column: 3 / 4;
-  }
+export const FormItem = styled.div<FormItemProps>`
+  grid-column: span ${props => props.gridColumns};
 `
 
 export const Input = styled.input`
@@ -75,6 +57,8 @@ export const Input = styled.input`
   border: 1px solid ${props => props.theme.colors.base.button};
   padding: 0.75rem;
   border-radius: 4px;
+  width: 100%;
+  font-size: ${props => props.theme.fontSize.sm};
 
   &::placeholder {
     color: ${props => props.theme.colors.base.label};
@@ -86,13 +70,7 @@ export const Input = styled.input`
   }
 `
 
-export const Select = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-`
-
-export const SelectItem = styled.label`
+export const LabelSelect = styled.label`
   display: flex;
   gap: 0.75rem;
   padding: 1rem;
