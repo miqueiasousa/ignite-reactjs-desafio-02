@@ -22,35 +22,37 @@ export function Success() {
             Agora é só aguardar que logo o café chegará até você
           </S.SuccessSubtitle>
         </Stack>
-        <S.OrderInfo>
-          <div className="item">
+        <S.OrderDetail>
+          <S.Detail>
             <Avatar bgColor={theme.colors.purple[500]}>
               <MapPin size={16} weight="fill" />
             </Avatar>
-            <div>
-              <span>Entrega em Rua João Daniel Martinelli, 102</span>
+            <Stack spacing={0}>
+              <span>
+                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+              </span>
               <span>Farrapos - Porto Alegre, RS</span>
-            </div>
-          </div>
-          <div className="item">
+            </Stack>
+          </S.Detail>
+          <S.Detail>
             <Avatar bgColor={theme.colors.yellow[500]}>
               <Timer size={16} weight="fill" />
             </Avatar>
-            <div>
+            <Stack spacing={0}>
               <span>Previsão de entrega</span>
-              <span>20 min - 30 min</span>
-            </div>
-          </div>
-          <div className="item">
+              <strong>20 min - 30 min</strong>
+            </Stack>
+          </S.Detail>
+          <S.Detail>
             <Avatar bgColor={theme.colors.yellow[900]}>
               <CurrencyDollar size={16} />
             </Avatar>
-            <div>
+            <Stack spacing={0}>
               <span>Pagamento na entrega</span>
-              <span>Cartão de Crédito</span>
-            </div>
-          </div>
-        </S.OrderInfo>
+              <strong>Cartão de Crédito</strong>
+            </Stack>
+          </S.Detail>
+        </S.OrderDetail>
       </Stack>
       <img src={delivery} />
     </S.SuccessContainer>
