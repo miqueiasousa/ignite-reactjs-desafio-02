@@ -174,32 +174,32 @@ export function Home() {
               qualquer hora
             </S.Description>
           </Stack>
-          <S.ItemContainer>
-            <S.Item>
+          <S.HighlightContainer>
+            <S.Highlight>
               <Avatar bgColor={theme.colors.yellow[900]}>
                 <ShoppingCart size={16} weight="fill" />
               </Avatar>
               <span>Compra simples e segura</span>
-            </S.Item>
-            <S.Item>
+            </S.Highlight>
+            <S.Highlight>
               <Avatar bgColor={theme.colors.base.text}>
                 <Package size={16} weight="fill" />
               </Avatar>
               <span>Embalagem mantém o café intacto</span>
-            </S.Item>
-            <S.Item>
+            </S.Highlight>
+            <S.Highlight>
               <Avatar bgColor={theme.colors.yellow[500]}>
                 <Timer size={16} weight="fill" />
               </Avatar>
               <span>Entrega rápida e rastreada</span>
-            </S.Item>
-            <S.Item>
+            </S.Highlight>
+            <S.Highlight>
               <Avatar bgColor={theme.colors.purple[500]}>
                 <Coffee size={16} weight="fill" />
               </Avatar>
               <span>O café chega fresquinho até você</span>
-            </S.Item>
-          </S.ItemContainer>
+            </S.Highlight>
+          </S.HighlightContainer>
         </Stack>
         <img src={bannerImage} />
       </S.BannerContainer>

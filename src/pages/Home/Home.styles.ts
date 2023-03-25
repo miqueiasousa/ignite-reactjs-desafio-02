@@ -15,14 +15,14 @@ export const Description = styled.p`
   color: ${props => props.theme.colors.base.subtitle};
 `
 
-export const ItemContainer = styled.div`
+export const HighlightContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, auto);
   row-gap: 1.25rem;
   column-gap: 2.5rem;
 `
 
-export const Item = styled.div`
+export const Highlight = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
