@@ -2,10 +2,6 @@ import styled from 'styled-components'
 
 import { Stack } from '../../components/Stack'
 
-interface AvatarProps {
-  bgColor: string
-}
-
 export const BannerContainer = styled.div`
   display: flex;
   gap: 3.5rem;
@@ -30,17 +26,6 @@ export const Item = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-`
-
-export const Avatar = styled.div<AvatarProps>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  background-color: ${props => props.bgColor};
-  color: ${props => props.theme.colors.white};
-  border-radius: 50%;
 `
 
 export const FeedWrapper = styled(Stack)`

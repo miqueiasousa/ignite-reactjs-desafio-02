@@ -3,6 +3,7 @@ import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
 import { Stack } from '../../components/Stack'
 import { Title } from '../../components/Title'
+import { Avatar } from '../../components/Avatar'
 import bannerImage from '../../assets/banner.png'
 
 import { Card } from './components/Card/Card'
@@ -175,27 +176,27 @@ export function Home() {
           </Stack>
           <S.ItemContainer>
             <S.Item>
-              <S.Avatar bgColor={theme.colors.yellow[900]}>
+              <Avatar bgColor={theme.colors.yellow[900]}>
                 <ShoppingCart size={16} weight="fill" />
-              </S.Avatar>
+              </Avatar>
               <span>Compra simples e segura</span>
             </S.Item>
             <S.Item>
-              <S.Avatar bgColor={theme.colors.base.text}>
+              <Avatar bgColor={theme.colors.base.text}>
                 <Package size={16} weight="fill" />
-              </S.Avatar>
+              </Avatar>
               <span>Embalagem mantém o café intacto</span>
             </S.Item>
             <S.Item>
-              <S.Avatar bgColor={theme.colors.yellow[500]}>
+              <Avatar bgColor={theme.colors.yellow[500]}>
                 <Timer size={16} weight="fill" />
-              </S.Avatar>
+              </Avatar>
               <span>Entrega rápida e rastreada</span>
             </S.Item>
             <S.Item>
-              <S.Avatar bgColor={theme.colors.purple[500]}>
+              <Avatar bgColor={theme.colors.purple[500]}>
                 <Coffee size={16} weight="fill" />
-              </S.Avatar>
+              </Avatar>
               <span>O café chega fresquinho até você</span>
             </S.Item>
           </S.ItemContainer>

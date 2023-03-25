@@ -25,25 +25,6 @@ export const OrderInfo = styled.div`
     align-items: center;
     gap: 0.75rem;
 
-    > span {
-      display: inline-flex;
-      padding: 0.5rem;
-      border-radius: 9999px;
-      color: ${props => props.theme.colors.white};
-
-      &.local {
-        background-color: ${props => props.theme.colors.purple[500]};
-      }
-
-      &.time {
-        background-color: ${props => props.theme.colors.yellow[500]};
-      }
-
-      &.payment {
-        background-color: ${props => props.theme.colors.yellow[900]};
-      }
-    }
-
     > div {
       display: flex;
       flex-direction: column;
